@@ -1,6 +1,5 @@
 import sys
 casy = [12, 25, 64, 27, 15, 66, 128, 44]
-
 # 3
 casy = [int(cislo) for cislo in sys.argv[1:]]
 
