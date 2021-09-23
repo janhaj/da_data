@@ -16,8 +16,10 @@ hlasy = [
 ]
 
 lide = ['Igor Rezek', 'Augustýn Doležal', 'Vladan Bednář', 'Ondřej Brotz', 'Radim Kašpar']
+kraje = ['Hlavní město Praha', 'Jihočeský kraj', 'Jihomoravský kraj', 'Karlovarský kraj', 'Kraj Vysočina', 'Královéhradecký kraj', 'Liberecký kraj', 'Moravskoslezský kraj', 'Olomoucký kraj', 'Pardubický kraj', 'Plzeňský kraj', 'Středočeský kraj', 'Ústecký kraj', 'Zlínský kraj']
 
 # 1
+print('celkove hlasy kandidatu:')
 hlasu_1 = sum([radek[0] for radek in hlasy])
 hlasu_2 = sum([radek[1] for radek in hlasy])
 hlasu_3 = sum([radek[2] for radek in hlasy])
@@ -27,18 +29,45 @@ celkem_hlasu = [hlasu_1, hlasu_2, hlasu_3, hlasu_4, hlasu_5]
 print(celkem_hlasu)
 
 # 2
+print('prvni kolo voleb vyhral:')
 index_kandidata = celkem_hlasu.index(max(celkem_hlasu))
 print(lide[index_kandidata])
 
 # 3
 volebni_ucast_v_krajich = [sum(kraj) for kraj in hlasy]
 minimalni_ucast_index = volebni_ucast_v_krajich.index(min(volebni_ucast_v_krajich))
-print(minimalni_ucast_index)
+print('minimalni ucast byla v kraji: ' + kraje[minimalni_ucast_index])
 maximalni_ucast_index = volebni_ucast_v_krajich.index(max(volebni_ucast_v_krajich))
-print(maximalni_ucast_index)
+print('maximalni ucast byla v kraji: ' + kraje[maximalni_ucast_index])
 
 # 4
 vyhra_kandidata = [radek.index(max(radek)) for radek in hlasy]
 print(vyhra_kandidata)
 
 # 5
+print('procenta hlasu:')
+celkem_hlasu = sum([sum(radek) for radek in hlasy])
+procenta_hlasu = [[(pocet_hlasu_kandidata / celkem_hlasu) * 100 for pocet_hlasu_kandidata in radek] for radek in hlasy]
+print(procenta_hlasu)
+
+# 6
+print('vice nez 50% volicu?')
+tabulka_z_cviceni_11 = [
+  ['Hlavní město Praha', '1 280 508'],
+  ['Jihočeský kraj', '638 782'],
+  ['Jihomoravský kraj', '1 178 812'],
+  ['Karlovarský kraj', '296 749'],
+  ['Kraj Vysočina', '508 952'],
+  ['Královéhradecký kraj', '550 804'],
+  ['Liberecký kraj', '440 636'],
+  ['Moravskoslezský kraj', '1 209 879'],
+  ['Olomoucký kraj', '633 925'],
+  ['Pardubický kraj', '517 087'],
+  ['Plzeňský kraj', '578 629'],
+  ['Středočeský kraj', '1 338 982'],
+  ['Ústecký kraj', '821 377'],
+  ['Zlínský kraj', '583 698']
+]
+opravneni_volici = [int(radek[1].replace(' ', '')) for radek in tabulka_z_cviceni_11]
+procenta_hlasu = [sum(hlasy[index]) > opravneni_volici[index] / 2 for index in range(len(hlasy))]
+print(procenta_hlasu)

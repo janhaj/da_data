@@ -20,7 +20,10 @@ nazvy_kraju = [kraj[0] for kraj in kraje]
 print(nazvy_kraju)
 
 # 2
-pocty_obyvatel = [[kraj[0], int(kraj[1].replace(' ', ''))] for kraj in kraje]
-print(pocty_obyvatel)
+pocty_obyvatel_jako_cisla = [[kraj[0], int(kraj[1].replace(' ', ''))] for kraj in kraje]
+print(pocty_obyvatel_jako_cisla)
 
 # 3
+pocty_obyvatel = [int(kraj[1].replace(' ', '')) for kraj in kraje]
+kraje_pocty = [nazvy_kraju, pocty_obyvatel]
+print(kraje_pocty)

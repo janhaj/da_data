@@ -9,19 +9,27 @@ teploty = [
 ]
 
 # 1
+print('prumerne teploty:')
 prumerne_teploty = [sum(denni_teploty) / 4 for denni_teploty in teploty]
 print(prumerne_teploty)
 
 # 2
+print('ranni teploty:')
 ranni_teploty = [denni_teploty[0] for denni_teploty in teploty]
 print(ranni_teploty)
 
 # 3
+print('nocni teploty:')
 nocni_teploty = [denni_teploty[3] for denni_teploty in teploty]
 print(nocni_teploty)
 
 # 4
+print('denni a nocni teploty:')
 denni_nocni_teploty = [[denni_teploty[1], denni_teploty[3]] for denni_teploty in teploty]
 print(denni_nocni_teploty)
 
-prumerna_teplota = 0
+# 5
+print('prumer teplot za cely tyden:')
+celkovy_soucet = sum([sum(radek) for radek in teploty])
+pocet_hodnot = sum([len(radek) for radek in teploty])
+print(celkovy_soucet / pocet_hodnot)
