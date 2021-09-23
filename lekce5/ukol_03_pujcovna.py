@@ -7,5 +7,4 @@ with open(sys.argv[1]) as zadani:
     # [['2AD:3824', '16.1'], ['6B2:6635', '7.6'], ['4C8:2878', '10,4'], ...
 
 ujete_km = [float(radek[1].replace(',', '.')) for radek in radky]
-sum(ujete_km)
 print('Celkem bylo ujeto: ' + str(sum(ujete_km)))

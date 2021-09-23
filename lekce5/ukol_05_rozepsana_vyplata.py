@@ -6,8 +6,6 @@ with open('ukol_01_vykaz.txt') as zadani:
     # strip abych odstranil znak konce radku
     # a nasledne prevedu retezce na cela cisla
     radky = [int(radek.strip()) for radek in zadani]
-
-
 [print(radek * hodinova_mzda) for radek in radky]
 
 # 2

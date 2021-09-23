@@ -2,6 +2,7 @@ with open('ukol_07_pasazeri.txt') as zadani:
     radky = [radek.strip() for radek in zadani]
 
 # 1
+# zajima nas pouze prvni den, takze radky[0]
 jizdy_za_den = [jizda.split(',') for jizda in radky[0].split(' ')]
 # jizdy_za_den = [['8', '25'], ['9', '23'], ['30', '6'], ['17', '23']]
 tam = sum([int(jizda[0]) for jizda in jizdy_za_den])
