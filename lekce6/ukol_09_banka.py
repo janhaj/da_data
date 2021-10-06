@@ -1,4 +1,4 @@
-with open('ukol_09_zustatky.txt') as vstupni_soubor:
+with open('ukol_09_zustatky.txt', encoding='utf-8') as vstupni_soubor:
     zustatky = [int(radek.strip()) for radek in vstupni_soubor]
 
 # 1

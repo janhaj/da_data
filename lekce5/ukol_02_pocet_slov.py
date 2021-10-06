@@ -1,7 +1,7 @@
 import sys
 
 # 1
-with open('ukol_02_praha.txt') as zadani:
+with open('ukol_02_praha.txt', encoding='utf-8') as zadani:
     # strip abych odstranil znak konce radku
     radky = [radek.strip() for radek in zadani]
 

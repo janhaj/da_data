@@ -1,4 +1,4 @@
-with open('ukol_07_pasazeri.txt') as zadani:
+with open('ukol_07_pasazeri.txt', encoding='utf-8') as zadani:
     radky = [radek.strip() for radek in zadani]
 
 # 1
